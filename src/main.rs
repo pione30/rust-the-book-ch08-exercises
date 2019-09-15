@@ -1,4 +1,5 @@
 mod exercise1;
+mod exercise2;
 
 fn main() {
     let mut test_vec: Vec<usize> = vec![1, 2, 3, 5, 2, 9, 42];
@@ -6,4 +7,10 @@ fn main() {
     assert_eq!(answer1.mean, 9);
     assert_eq!(answer1.median, 3);
     assert_eq!(answer1.mode, 2);
+
+    assert_eq!(exercise2::to_pig_latin(&"first".to_string()), Some("irst-fay".to_string()));
+    assert_eq!(exercise2::to_pig_latin(&"apple".to_string()), Some("apple-hay".to_string()));
+    assert_eq!(exercise2::to_pig_latin(&"Grüße, Jürgen ❤".to_string()), None);
+    assert_eq!(exercise2::to_pig_latin(&"s".to_string()), None);
+    assert_eq!(exercise2::to_pig_latin(&"".to_string()), None);
 }
