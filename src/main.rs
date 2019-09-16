@@ -21,4 +21,12 @@ fn main() {
     let payroll = exercise3::add_an_employee(&mut payroll, "Add Sally to Engineering".to_string());
     let mut payroll = payroll.ok().unwrap();
     assert_eq!(payroll["Engineering"], vec!["Sally"]);
+
+    let payroll = exercise3::add_an_employee(&mut payroll, "Add Amir to Sales".to_string());
+    let mut payroll = payroll.ok().unwrap();
+    assert_eq!(payroll["Sales"], vec!["Amir"]);
+
+    let payroll = exercise3::add_an_employee(&mut payroll, "Add John to Engineering".to_string());
+    let payroll = payroll.ok().unwrap();
+    assert_eq!(payroll["Engineering"], vec!["John", "Sally"]);
 }

@@ -7,7 +7,9 @@ pub fn add_an_employee(payroll: &mut HashMap<String, Vec<String>>, query: String
         return Err("Query must be like 'Add <Name> to <Department>'".to_string());
     }
 
-    payroll.entry(split_query[3].to_string()).or_insert(Vec::new()).push(split_query[1].to_string());
+    let employee_list = payroll.entry(split_query[3].to_string()).or_insert(Vec::new());
+    employee_list.push(split_query[1].to_string());
+    employee_list.sort();
 
     Ok(payroll)
 }
