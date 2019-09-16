@@ -19,5 +19,6 @@ fn main() {
 
     let mut payroll = HashMap::new();
     let payroll = exercise3::add_an_employee(&mut payroll, "Add Sally to Engineering".to_string());
-    assert_eq!(payroll.ok().unwrap()["Engineering"], vec!["Sally"]);
+    let mut payroll = payroll.ok().unwrap();
+    assert_eq!(payroll["Engineering"], vec!["Sally"]);
 }
